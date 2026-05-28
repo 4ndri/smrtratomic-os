@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    install:
+      packages:
+        - niri
+        - waybar
+        - walker
+        - elephant
+        - elephant-providerlist
+        - elephant-desktopapplications
+        - elephant-files
+        - elephant-calc
+        - elephant-symbols
+        - elephant-websearch
+        - elephant-clipboard
+        - mako
+        - xwayland-satellite
+        - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
+        - xdg-terminal-exec
+        - wl-clipboard
