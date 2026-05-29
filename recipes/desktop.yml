@@ -13,3 +13,9 @@ modules:
         - xdg-desktop-portal-gtk
         - xdg-terminal-exec
         - wl-clipboard
+        - bluez
+        - bluez-utils
+        - pamixer
+        - btop
+        - alacritty
+        - jetbrains-mono-fonts
