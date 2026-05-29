@@ -6,15 +6,7 @@ modules:
       packages:
         - niri
         - waybar
-        - walker
-        - elephant
-        - elephant-providerlist
-        - elephant-desktopapplications
-        - elephant-files
-        - elephant-calc
-        - elephant-symbols
-        - elephant-websearch
-        - elephant-clipboard
+        - fuzzel
         - mako
         - xwayland-satellite
         - xdg-desktop-portal-gnome

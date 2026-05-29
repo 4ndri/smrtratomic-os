@@ -52,15 +52,13 @@ screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
-spawn-at-startup "elephant"
-spawn-at-startup "walker" "--gapplication-service"
 spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE" "XDG_SESSION_DESKTOP" "NIRI_SOCKET"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
 
 binds {
   Mod+Return { spawn "xdg-terminal-exec"; }
   Mod+E { spawn "nautilus" "--new-window"; }
-  Mod+Space { spawn "walker"; }
+  Mod+Space { spawn "fuzzel"; }
   Mod+Q { close-window; }
   Mod+F { maximize-column; }
   Mod+Shift+F { fullscreen-window; }

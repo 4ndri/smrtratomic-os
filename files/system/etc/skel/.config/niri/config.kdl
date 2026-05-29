@@ -1,0 +1,118 @@
+// Standalone niri desktop defaults for smrtratomic-os.
+
+input {
+  keyboard {
+    repeat-rate 40
+    repeat-delay 600
+  }
+
+  touchpad {
+    natural-scroll
+    tap
+    click-method "clickfinger"
+  }
+}
+
+layout {
+  gaps 4
+  center-focused-column "on-overflow"
+  always-center-single-column
+  default-column-width { proportion 0.5; }
+
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+    proportion 1.0
+  }
+
+  focus-ring {
+    on
+    width 2
+    active-color "#89b4fa"
+    inactive-color "#313244"
+    urgent-color "#9b0000"
+  }
+
+  border {
+    on
+    width 1
+    active-color "#33ccff"
+    inactive-color "#595959"
+    urgent-color "#9b0000"
+  }
+}
+
+animations {
+  off
+}
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+
+spawn-at-startup "mako"
+spawn-at-startup "waybar"
+spawn-at-startup "systemctl" "--user" "import-environment" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_TYPE" "XDG_SESSION_DESKTOP" "NIRI_SOCKET"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "--all"
+
+binds {
+  Mod+Return { spawn "xdg-terminal-exec"; }
+  Mod+E { spawn "nautilus" "--new-window"; }
+  Mod+Space { spawn "fuzzel"; }
+  Mod+Q { close-window; }
+  Mod+F { maximize-column; }
+  Mod+Shift+F { fullscreen-window; }
+  Mod+Ctrl+F { toggle-window-floating; }
+  Mod+Shift+C { center-column; }
+
+  Mod+LEFT { focus-column-left; }
+  Mod+RIGHT { focus-column-right; }
+  Mod+DOWN { focus-workspace-down; }
+  Mod+UP { focus-workspace-up; }
+
+  Mod+Shift+LEFT { move-column-left; }
+  Mod+Shift+RIGHT { move-column-right; }
+  Mod+Shift+DOWN { move-column-to-workspace-down; }
+  Mod+Shift+UP { move-column-to-workspace-up; }
+
+  Mod+Ctrl+LEFT { set-column-width "-10%"; }
+  Mod+Ctrl+RIGHT { set-column-width "+10%"; }
+  Mod+Ctrl+UP { set-window-height "+10%"; }
+  Mod+Ctrl+DOWN { set-window-height "-10%"; }
+
+  Mod+S { switch-preset-column-width; }
+  Mod+P { toggle-overview; }
+
+  Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace 2; }
+  Mod+3 { focus-workspace 3; }
+  Mod+4 { focus-workspace 4; }
+  Mod+5 { focus-workspace 5; }
+  Mod+6 { focus-workspace 6; }
+  Mod+7 { focus-workspace 7; }
+  Mod+8 { focus-workspace 8; }
+  Mod+9 { focus-workspace 9; }
+
+  Mod+Shift+1 { move-column-to-workspace 1; }
+  Mod+Shift+2 { move-column-to-workspace 2; }
+  Mod+Shift+3 { move-column-to-workspace 3; }
+  Mod+Shift+4 { move-column-to-workspace 4; }
+  Mod+Shift+5 { move-column-to-workspace 5; }
+  Mod+Shift+6 { move-column-to-workspace 6; }
+  Mod+Shift+7 { move-column-to-workspace 7; }
+  Mod+Shift+8 { move-column-to-workspace 8; }
+  Mod+Shift+9 { move-column-to-workspace 9; }
+
+  Print { screenshot; }
+  Mod+Print { screenshot-screen; }
+  Mod+Shift+Print { screenshot-window; }
+
+  Mod+Comma { spawn "makoctl" "dismiss"; }
+  Mod+Shift+Comma { spawn "makoctl" "dismiss" "--all"; }
+
+  XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+  XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
+  XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+
+  Mod+Shift+E { quit; }
+}

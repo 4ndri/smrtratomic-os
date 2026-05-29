@@ -3,3 +3,6 @@ cosign.private
 /Containerfile
 
 .images
+/.bluebuild-scripts_*
+*.tar
+.bluebuild-tmp
